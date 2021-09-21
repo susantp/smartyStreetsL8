@@ -11,6 +11,6 @@ class SmartyStreetsFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'smartyStreet';
+        return 'smartyStreets';
     }
 }
