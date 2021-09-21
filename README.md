@@ -33,7 +33,7 @@ composer require techbizz/smartystreetslaravel
 publish the config file:
 
 ```bash
-php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag=":smartyStreets"
+php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartyStreets"
 ```
 
 Configure your API credentials in the config file.
