@@ -8,6 +8,7 @@ use TechBizz\SmartyStreets\Commands\SmartyStreetsCommand;
 
 class SmartyStreetsServiceProvider extends PackageServiceProvider
 {
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -16,10 +17,10 @@ class SmartyStreetsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('smartystreetslaravel')
+            ->name('smartyStreetLaravel')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_smartystreetslaravel_table')
+            ->hasMigration('create_sample_table')
             ->hasCommand(SmartyStreetsCommand::class);
     }
 }

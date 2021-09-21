@@ -5,12 +5,12 @@ namespace TechBizz\SmartyStreets;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \TechBizz\SmartyStreets\SmartyStreets
+ * @see \TechBizz\SmartyStreets\SmartyStreetsService
  */
 class SmartyStreetsFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'smartystreetslaravel';
+        return 'smartyStreet';
     }
 }
