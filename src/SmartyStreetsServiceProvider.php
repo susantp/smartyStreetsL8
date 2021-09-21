@@ -18,7 +18,7 @@ class SmartyStreetsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('smartyStreets')
-            ->hasConfigFile()
+            ->hasConfigFile(['smarty_streets'])
             ->hasViews()
             ->hasMigration('create_sample_table')
             ->hasCommand(SmartyStreetsCommand::class);
