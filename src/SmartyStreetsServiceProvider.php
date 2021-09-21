@@ -17,7 +17,7 @@ class SmartyStreetsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('smartyStreetLaravel')
+            ->name('smartyStreets')
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_sample_table')
