@@ -8,6 +8,12 @@ use TechBizz\SmartyStreets\Commands\SmartyStreetsCommand;
 
 class SmartyStreetsServiceProvider extends PackageServiceProvider
 {
+    public function register()
+    {
+        $this->app->bind('smartyStreet', function ($app) {
+            return new SmartyStreetsService;
+        });
+    }
 
     public function configurePackage(Package $package): void
     {
