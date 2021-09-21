@@ -33,16 +33,14 @@ composer require techbizz/smartystreetslaravel
 publish the config file:
 
 ```bash
-php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartyStreets"
+php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartyStreets-config"
 ```
 
 Configure your API credentials in the config file.
 
     ```shell
-	"authId" => env("SMARTY_STREET_AUTH_ID"),
-    "token" => env("SMARTY_STREET_AUTH_TOKEN"),
-    "devUrl" => env("SMARTY_STREET_DEV_URL"),
-    "prodUrl" => env("SMARTY_STREET_PRODUCTION_URL")
+	'authId' 	=> 'raw ID here',
+    'authToken'	=> 'raw token here',
     ```
 
 Alternately, replace the values there with env() calls, and put the credentials in your .env file

@@ -93,7 +93,7 @@ class SmartyStreetsService
         $jsonRequest = json_encode($this->request);
 
         $rawJsonResponseString = $this->post($url, $jsonRequest);
-        return $this->response = json_decode($rawJsonResponseString, 1);
+        return $this->response = json_decode($rawJsonResponseString, true);
     }
 
     public function addressGetCandidates($inputIndex)
@@ -140,7 +140,7 @@ class SmartyStreetsService
         curl_setopt_array($ch, $options);
         $rawJsonResponseString = curl_exec($ch);
         $rawJsonResponseString = trim($rawJsonResponseString);
-        $jsonDecoded = json_decode($rawJsonResponseString, 1);
+        $jsonDecoded = json_decode($rawJsonResponseString, true);
         $curl_info = curl_getinfo($ch);
 
         /**
