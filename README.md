@@ -1,87 +1,39 @@
-# This is my package smartystreetslaravel
+# smartystreets-laravel
+Laravel (PHP) SDK for using SmartyStreets geocoding.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/techbizz/smartystreetslaravel.svg?style=flat-square)](https://packagist.org/packages/techbizz/smartystreetslaravel)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/techbizz/smartystreetslaravel/run-tests?label=tests)](https://github.com/techbizz/smartystreetslaravel/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/techbizz/smartystreetslaravel/Check%20&%20fix%20styling?label=code%20style)](https://github.com/techbizz/smartystreetslaravel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/techbizz/smartystreetslaravel.svg?style=flat-square)](https://packagist.org/packages/techbizz/smartystreetslaravel)
+Only attempting Address Verify at this time; willing to accept pull requests that fill in the other functionalities too (Zipcode Verify, Autocomplete, and Address Extraction).
 
----
-This repo can be used to scaffold a Laravel package. Follow these steps to get started:
-
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this smartystreetslaravel
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files
-3. Remove this block of text.
-4. Have fun creating your package.
-5. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/SmartyStreetsLaravel.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/SmartyStreetsLaravel)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
-## Installation
-
-You can install the package via composer:
-
-```bash
-composer require techbizz/smartystreetslaravel
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartystreetslaravel-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartystreetslaravel-config"
-```
-
-This is the contents of the published config file:
+Example Usage
+--------------
 
 ```php
-return [
-];
+$response = SmartyStreets::addressQuickVerify(array(
+    'street'=>'P.O. Box 1017',
+    'city'=>'Havertown',
+    'state'=>'PA',
+));
 ```
+Methods are available (addressAddToRequest && addressGetCandidates) to check multiple addresses with one POST, but addressQuickVerify only handles one address at a time.
 
-## Usage
+Further API details, including request and response fields, available at SmartyStreets: https://smartystreets.com/docs/address
 
-```php
-$smartystreetslaravel = new TechBizz\SmartyStreets();
-echo $smartystreetslaravel->echoPhrase('Hello, TechBizz!');
-```
 
-## Testing
+How to Install
+---------------
 
-```bash
-composer test
-```
+1. Create the configuration file `config/smarty_streets.php`:
 
-## Changelog
+    ```shell
+    $ php artisan vendor:publish
+    ```
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+1. Configure your API credentials in the config file.
 
-## Contributing
+    ```shell
+   "authId" => env("SMARTY_STREET_AUTH_ID"),
+    "token" => env("SMARTY_STREET_AUTH_TOKEN"),
+    "devUrl" => env("SMARTY_STREET_DEV_URL"),
+    "prodUrl" => env("SMARTY_STREET_PRODUCTION_URL")
+    ```
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Susant Paudel](https://github.com/susantp)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+Alternately, replace the values there with env() calls, and put the credentials in your .env file
