@@ -1,0 +1,61 @@
+{
+    "name": "techbizz/smartystreetslaravel",
+    "description": "This is my package smartystreetslaravel",
+    "keywords": [
+        "TechBizz",
+        "laravel",
+        "smartystreetslaravel"
+    ],
+    "homepage": "https://github.com/techbizz/smartystreetslaravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Susant Paudel",
+            "email": "techbizznepal@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^8.37"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^5.3",
+        "orchestra/testbench": "^6.15",
+        "pestphp/pest": "^1.18",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "spatie/laravel-ray": "^1.23",
+        "vimeo/psalm": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "TechBizz\\SmartyStreets\\": "src",
+            "TechBizz\\SmartyStreets\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TechBizz\\SmartyStreets\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TechBizz\\SmartyStreets\\SmartyStreetsServiceProvider"
+            ],
+            "aliases": {
+                "SmartyStreets": "TechBizz\\SmartyStreets\\SmartyStreetsFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
