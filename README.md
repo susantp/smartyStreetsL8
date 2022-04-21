@@ -40,7 +40,7 @@ How to Install
 
 1.  Configure your API credentials in the config file.
 
-    ``shell
+    ```shell
 	    'authId' 	=> 'raw ID here',
 	    'authToken'	=> 'raw token here',
     ```
