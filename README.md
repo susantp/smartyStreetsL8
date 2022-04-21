@@ -26,21 +26,23 @@ SmartyStreets: https://smartystreets.com/docs/address
 How to Install
 ---------------
 
-```bash
-composer require techbizz/smartystreetslaravel
-```
-
-publish the config file:
-
-```bash
-php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartyStreets-config"
-```
-
-Configure your API credentials in the config file.
+1.  Install the `fireenginered/smartystreets-laravel` package
 
     ```shell
-	'authId' 	=> 'raw ID here',
-	'authToken'	=> 'raw token here',
+    $ composer require techbizz/smartystreetslaravel
+    ```
+
+1.  publish the config file:
+
+    ```shell
+    $ php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartyStreets-config"
+    ```
+
+1.  Configure your API credentials in the config file.
+
+    ``shell
+	    'authId' 	=> 'raw ID here',
+	    'authToken'	=> 'raw token here',
     ```
     
 Alternately, replace the values there with env() calls, and put the credentials in your .env file
