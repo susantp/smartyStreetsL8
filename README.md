@@ -36,7 +36,7 @@ publish the config file:
 php artisan vendor:publish --provider="TechBizz\SmartyStreets\SmartyStreetsServiceProvider" --tag="smartyStreets-config"
 ```
 
-1. Configure your API credentials in the config file.
+Configure your API credentials in the config file.
 
     ```shell
 	'authId' 	=> 'raw ID here',
