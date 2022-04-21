@@ -26,7 +26,7 @@ SmartyStreets: https://smartystreets.com/docs/address
 How to Install
 ---------------
 
-1.  Install the `fireenginered/smartystreets-laravel` package
+1.  Install the `techbizz/smartystreetslaravel` package
 
     ```shell
     $ composer require techbizz/smartystreetslaravel
